@@ -5,7 +5,7 @@ root = Tk()
 def button_clicked(number):
     curent = e.get()
     e.delete(0,END)
-    e.insert(0,str(curent)+ str(number))
+    e.insert(0, str(curent) + str(number))
 
 def button_clear():
     e.delete(0,END)
@@ -22,7 +22,7 @@ def button_equal():
     e.insert(0,f_num + int(second_number))
 
 root.title("simple calculator")
-e = Entry(root, width=35, borderwidth=3.5)
+e = Entry(root, width=35, borderwidth=7.5)
 
 # define buttons
 button_1 = Button(root, text=1, padx=40, pady=20, command= lambda : button_clicked(1))
