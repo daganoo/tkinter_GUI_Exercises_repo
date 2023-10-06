@@ -55,7 +55,8 @@ button_0.grid(row=4, column=0)
 button_clear.grid(row=4, column=1,columnspan=2)
 button_add.grid(row=5, column=0)
 button_equal.grid(row=5, column=1,columnspan=3)
-
+root.geometry("291x372")
+root.resizable(False, False)
 
 e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 root.mainloop()

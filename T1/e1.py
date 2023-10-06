@@ -1,0 +1,10 @@
+from tkinter import *
+root=Tk()
+l1=Label(root, text="bonjour tout le mond", font=("Arial", 10, "bold"))
+b1=Button(root, text="quitter",command=root.destroy ,fg="red")
+root.title("exercice 1")
+l1.pack()
+b1.pack()
+root.geometry("250x150")
+root.resizable(False, False)
+root.mainloop()
