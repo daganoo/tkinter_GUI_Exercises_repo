@@ -13,15 +13,10 @@ def drawline():
     y2, y1 = y2+10, y1-10
 
 def drawline2():
-    # Coordinates for the vertical line
     x1_v, y1_v, x2_v, y2_v = 250, 10, 250, 500
-    # Coordinates for the horizontal line
     x1_h, y1_h, x2_h, y2_h = 10, 250, 500, 250
-    # Draw the vertical line in red
     can1.create_line(x1_v, y1_v, x2_v, y2_v, width=2, fill='red')
-    # Draw the horizontal line in red
     can1.create_line(x1_h, y1_h, x2_h, y2_h, width=2, fill='red')
-
 
 def changecolor():
     "changement de color aléatoire"

@@ -12,7 +12,7 @@ def dessiner_bleu():
     dessiner_anneau('blue', 50, 50)
 
 def dessiner_jaune():
-    dessiner_anneau('yellow', 160, 50)
+    dessiner_anneau('yellow', 170, 50)
 
 def dessiner_noir():
     dessiner_anneau('black', 270, 50)
