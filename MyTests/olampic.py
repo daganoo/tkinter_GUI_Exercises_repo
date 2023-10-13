@@ -15,7 +15,7 @@ def dessiner_jaune():
     dessiner_anneau('yellow', 170, 50)
 
 def dessiner_noir():
-    dessiner_anneau('black', 270, 50)
+    dessiner_anneau('black', 290, 50)
 
 def dessiner_vert():
     dessiner_anneau('green', 105, 100)
@@ -30,7 +30,6 @@ def quitter():
 canvas = Canvas(fenetre, width=500, height=300, bg='white')
 canvas.pack()
 
-# Créer les 5 boutons pour dessiner les anneaux
 bouton_bleu = Button(fenetre, text="Bleu", command=dessiner_bleu)
 bouton_bleu.pack()
 
