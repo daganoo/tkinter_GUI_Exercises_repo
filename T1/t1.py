@@ -28,7 +28,7 @@ def changecolor():
 
 # -------------  programme principal  -------------
 
-# les variable suivante seront utilisé de manière globale
+# les variable suivante seront utilisé de manière globale ///
 x1, y1, x2, y2 = 15, 500, 500, 15  # coordonnées de la ligne
 coul = 'dark green'  # color de la ligne
 
