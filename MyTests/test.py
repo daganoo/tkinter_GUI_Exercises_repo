@@ -1,11 +1,17 @@
 from tkinter import *
-root=Tk()
-canva=Canvas(root, width=500, height=500)
-canva.pack()
-canva.create_line((250,0,250,500))
-canva.create_line((0,250,500,250))
 
-canva.create_oval((200,200,300,300))
-canva.create_oval((100,100,400,400))
-canva.create_oval((150,150,180,180))
+root = Tk()
+canvas = Canvas(root, width=500, height=500)
+canvas.pack()
+
+def lines():
+    colors = ['red', 'green', 'blue']
+    color_index = 0  
+    for i in range(0, 500, 6):
+        color = colors[color_index]
+        canvas.create_line(0, i, 500, i, fill=color)
+        color_index = (color_index + 1) if color_index < 2 else 0
+
+b1 = Button(root, text="draw", command=lines)
+b1.pack()
 root.mainloop()
