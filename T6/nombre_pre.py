@@ -28,7 +28,7 @@ label2.grid(row=2, column=1)
 textarea = Text(fen1, width=30, height=10)
 textarea.grid(row=2, column=2)
 
-bouton = Button(fen1, text="Afficher les résultats", command=Premier)
+bouton = Button(fen1, text="résultats", command=Premier)
 bouton.grid(row=3, column=1)
 
 fen1.mainloop()
