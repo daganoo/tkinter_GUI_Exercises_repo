@@ -1,23 +1,34 @@
 from tkinter import *
 
-def nbpremiers(event):
-    num1 = int(entry1.get())
-    premiers = [x for x in range(2, num1) if all(x % i != 0 for i in range(2, int(x**0.5) + 1))]
-    premiers_str = ' '.join(map(str, premiers))
-    entry2.delete(0, END)
-    entry2.insert(0, premiers_str)
 
-root = Tk()
-label1 = Label(root, text="Entrez un nombre : ")
-label1.grid(row=0,column=0)
-entry1 = Entry(root)
-entry1.grid(row=0,column=1)
+def Premier():
+    contenu = entry.get()
+    N = int(contenu)
+    for i in range(2, N + 1):
+        est_premier = True
+        for j in range(2, int(i ** 0.5) + 1):
+            if i % j == 0:
+                est_premier = False
+                break
+        if est_premier:
+            textarea.insert(END, str(i) + "\t")
 
-label2 = Label(root, text="Nombres premier: ")
-label2.grid(row=1,column=0)
-entry2 = Entry(root)
-entry2.grid(row=1,column=1)
 
-entry1.bind("<KeyRelease>", nbpremiers)
+fen1 = Tk()
+fen1.title("Nombres premiers")
 
-root.mainloop()
+label1 = Label(fen1, text="Donner un nombre")
+label1.grid(row=1, column=1)
+entry = Entry(fen1)
+entry.grid(row=1, column=2)
+
+label2 = Label(fen1, text="Les nombres premiers sont")
+label2.grid(row=2, column=1)
+
+textarea = Text(fen1, width=30, height=10)
+textarea.grid(row=2, column=2)
+
+bouton = Button(fen1, text="Afficher les résultats", command=Premier)
+bouton.grid(row=3, column=1)
+
+fen1.mainloop()
