@@ -8,7 +8,7 @@ def drawline():
 
 def changecolor():
     global cou1
-    pal = ['blue', 'yellow', 'green','red']
+    pal = ['blue', 'black', 'green','red']
     c = randrange(4)
     cou1 = pal[c]
 
