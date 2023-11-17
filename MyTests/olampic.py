@@ -1,52 +1,26 @@
-from tkinter import *
+from tkinter import*
+window=Tk()
+window.title=("circles")
 
-fenetre = Tk()
-fenetre.title("Anneaux olympiques")
+def create_circle(color,x,y):
+    canva.create_oval(x, y, x+100, y+100, outline=color, width=5)
 
-# Fonction pour dessiner un anneau olympique
-def dessiner_anneau(couleur, x, y):
-    canvas.create_oval(x, y, x + 100, y + 100, outline=couleur, width=5)
 
-# Fonctions pour dessiner chaque anneau olympique
-def dessiner_bleu():
-    dessiner_anneau('blue', 50, 50)
+def red_circle():
+    create_circle("red",10 ,10 )
 
-def dessiner_jaune():
-    dessiner_anneau('yellow', 170, 50)
+def yellow_circle():
+    create_circle("yellow",100 ,100 )
 
-def dessiner_noir():
-    dessiner_anneau('black', 290, 50)
+def green_circle():
+    create_circle("green",1 ,100 )
 
-def dessiner_vert():
-    dessiner_anneau('green', 105, 100)
-
-def dessiner_rouge():
-    dessiner_anneau('red', 215, 100)
-
-# Fonction pour fermer la fenêtre
-def quitter():
-    fenetre.quit()
-
-canvas = Canvas(fenetre, width=500, height=300, bg='white')
-canvas.pack()
-
-bouton_bleu = Button(fenetre, text="Bleu", command=dessiner_bleu)
-bouton_bleu.pack()
-
-bouton_jaune = Button(fenetre, text="Jaune", command=dessiner_jaune)
-bouton_jaune.pack()
-
-bouton_noir = Button(fenetre, text="Noir", command=dessiner_noir)
-bouton_noir.pack()
-
-bouton_vert = Button(fenetre, text="Vert", command=dessiner_vert)
-bouton_vert.pack()
-
-bouton_rouge = Button(fenetre, text="Rouge", command=dessiner_rouge)
-bouton_rouge.pack()
-
-# Bouton pour quitter
-bouton_quitter = Button(fenetre, text="Quitter", command=quitter)
-bouton_quitter.pack()
-
-fenetre.mainloop()
+canva=Canvas(window, width=600, height=600)
+canva.pack()
+red = Button(window, text="Red", command = red_circle)
+red.pack()
+yellow = Button(window, text="yellow", command = yellow_circle)
+yellow.pack()
+green = Button(window, text="green", command = green_circle)
+green.pack()
+window.mainloop()
