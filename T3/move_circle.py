@@ -1,6 +1,6 @@
 from tkinter import *
 
-def update_oval_coordinates(dx, dy):
+def update_oval(dx, dy):
     current_coords = canvas.coords(oval)
     new_x1 = current_coords[0] + dx
     new_y1 = current_coords[1] + dy
@@ -16,20 +16,19 @@ def update_oval_coordinates(dx, dy):
         dx = 0
     if new_y2 > canvas.winfo_height():
         dy = 0
-
     canvas.move(oval, dx, dy)
 
 def move_up():
-    update_oval_coordinates(0, -10)
+    update_oval(0, -10)
 
 def move_down():
-    update_oval_coordinates(0, 10)
+    update_oval(0, 10)
 
 def move_left():
-    update_oval_coordinates(-10, 0)
+    update_oval(-10, 0)
 
 def move_right():
-    update_oval_coordinates(10, 0)
+    update_oval(10, 0)
 
 root = Tk()
 canvas = Canvas(root, height=400, width=300, bg="dark gray")

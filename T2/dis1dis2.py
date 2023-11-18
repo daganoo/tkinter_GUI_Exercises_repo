@@ -12,7 +12,7 @@ def figure_1():
     rayon = 2
     while rayon < 100:
         cercle(100, 100, rayon)
-        rayon += 6
+        rayon += 10
 
 
 def figure_2():
@@ -26,11 +26,9 @@ def figure_2():
             [156, 115, 20, 'red'],
             [100, 95, 15, 'purple'],
             [100, 145, 30, 'purple']]
-    i = 0
-    while i < len(dis2):
+    for i in range(0, len(dis2)):
         x = dis2[i]
         cercle(x[0], x[1], x[2], x[3])
-        i += 1
 
 
 fen = tk.Tk()
