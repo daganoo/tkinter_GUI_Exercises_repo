@@ -6,7 +6,6 @@ def update_oval(dx, dy):
     new_y1 = current_coords[1] + dy
     new_x2 = current_coords[2] + dx
     new_y2 = current_coords[3] + dy
-
     # Ensure the oval stays within the canvas boundaries
     if new_x1 < 0:
         dx = 0
@@ -16,6 +15,7 @@ def update_oval(dx, dy):
         dx = 0
     if new_y2 > canvas.winfo_height():
         dy = 0
+
     canvas.move(oval, dx, dy)
 
 def move_up():
@@ -34,7 +34,7 @@ root = Tk()
 canvas = Canvas(root, height=400, width=300, bg="dark gray")
 canvas.pack(side=LEFT)
 
-oval = canvas.create_oval(45, 80, 75, 110, fill="red", outline="red")
+oval = canvas.create_oval(20, 20, 60, 60, fill="red", outline="red")
 
 btn_1 = Button(root, text="Up", command=move_up)
 btn_1.pack()

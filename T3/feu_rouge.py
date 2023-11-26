@@ -18,8 +18,8 @@ def create_rectangle(x, y):
 x, y = 180, 180
 for i in range(5):
     canva.create_line(x,150,y,350, width=20,fill="yellow")
-    x += 40
-    y += 40
+    x += 30
+    y += 30
 
 def chenge_colore():
     canva.create_oval(100, 100, 120, 120, fill="green")
