@@ -12,6 +12,7 @@ def create_table():
         )
     ''')
     conn.commit()
+    
     conn.close()
 
 def submit():
@@ -58,10 +59,8 @@ age_label.grid(row=1, column=0, padx=10, pady=10, sticky="e")
 
 age_entry = tk.Entry(app)
 age_entry.grid(row=1, column=1, padx=10, pady=10)
-
 # Create and place the Submit button
 submit_button = tk.Button(app, text="Submit", command=submit)
 submit_button.grid(row=2, column=0, columnspan=2, pady=10)
 
-# Run the Tkinter event loop
 app.mainloop()
