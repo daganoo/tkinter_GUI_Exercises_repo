@@ -17,7 +17,7 @@ def figure_1():
 
 def figure_2():
     can.delete(all)
-    dis2 = [[100, 100, 80, 'red'],
+    diss2 = [[100, 100, 80, 'red'],
             [70, 70, 15, 'blue'],
             [130, 70, 15, 'blue'],
             [70, 70, 5, 'black'],
@@ -26,8 +26,8 @@ def figure_2():
             [156, 115, 20, 'red'],
             [100, 95, 15, 'purple'],
             [100, 145, 30, 'purple']]
-    for i in range(0, len(dis2)):
-        x = dis2[i]
+    for i in range(0, len(diss2)):
+        x = diss2[i]
         cercle(x[0], x[1], x[2], x[3])
 
 
