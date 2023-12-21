@@ -6,7 +6,7 @@ from tkinter import messagebox
 def quitter():
     fenetre.destroy()
 
-# Fonction pour enregistrer les données dans la base de données SQLite et dans un fichier texte
+
 def enregistrer_utilisateur():
     prenom = entry_prenom.get()
     nom = entry_nom.get()
@@ -14,11 +14,14 @@ def enregistrer_utilisateur():
     langage = var_langage.get()
     genre = var_genre.get()
 
-    # Connexion à la base de données SQLite (assurez-vous que le fichier n'existe pas déjà)
+   
     connexion = sqlite3.connect('utilisateurs.db')
     curseur = connexion.cursor()
 
-    # Création de la table s'il n'existe pas
+    if not prenom or not nom or not pays or not langage or not genre:
+        messagebox.showerror("Champs vides", "Veuillez remplir tous les champs du formulaire.")
+        return
+
     curseur.execute('''
         CREATE TABLE IF NOT EXISTS utilisateurs (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -30,30 +33,24 @@ def enregistrer_utilisateur():
         )
     ''')
 
-    # Insertion des données dans la table
     curseur.execute('''
         INSERT INTO utilisateurs (prenom, nom, pays, langage, genre)
         VALUES (?, ?, ?, ?, ?)
     ''', (prenom, nom, pays, langage, genre))
 
-    # Validation des changements dans la base de données
     connexion.commit()
 
-    # Fermeture de la connexion
     connexion.close()
 
-    # Enregistrement des données dans un fichier texte
     with open("form.txt", "a") as file:
         file.write(f"Name: {prenom}, Age: {nom}, pays: {pays}, langage: {langage}, genre: {genre}\n")
 
-    # Affichage d'une alerte
     messagebox.showinfo("Enregistrement réussi", "L'utilisateur a été enregistré avec succès.")
 
-# Création de la fenêtre principale
+
 fenetre = tk.Tk()
 fenetre.title("Formulaire d'enregistrement")
 
-# Ajout des widgets
 label_prenom = tk.Label(fenetre, text="Prénom:")
 label_prenom.grid(row=0, column=0, padx=10, pady=10)
 entry_prenom = tk.Entry(fenetre)

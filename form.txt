@@ -1,2 +1,2 @@
 Name: wed, Age: wed
-Name: zakos , Age: lounis, pays: Canada, langage: C++, genre: Féminin
+Name: zakos , Age: lounis, pays: Canada, langage: C++, genre: Fï¿½minin
