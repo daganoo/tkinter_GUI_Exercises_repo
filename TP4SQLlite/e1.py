@@ -7,10 +7,8 @@ def toggle_password_visibility():
     else:
         password_entry.config(show="*")
 
-
 root = tk.Tk()
 root.title("Interface Tkinter")
-
 
 email_label = ttk.Label(root, text="Email:")
 email_entry = ttk.Entry(root)
@@ -18,10 +16,8 @@ email_entry = ttk.Entry(root)
 password_label = ttk.Label(root, text="Mot de passe:")
 password_entry = ttk.Entry(root, show="*")
 
-
 show_password = tk.BooleanVar()
 show_password.set(False)
-
 
 show_password_button = ttk.Checkbutton(root, text="Afficher Mot de Passe", variable=show_password, command=toggle_password_visibility)
 
@@ -36,6 +32,5 @@ password_entry.grid(row=1, column=1, padx=10, pady=10, sticky="ew")
 
 show_password_button.grid(row=2, column=1, padx=10, pady=10, sticky="w")
 login_button.grid(row=3, column=0, columnspan=2, pady=10)
-
 
 root.mainloop()
